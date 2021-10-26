@@ -18,3 +18,15 @@ CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
 ~$ docker images
 REPOSITORY   TAG       IMAGE ID   CREATED   SIZE
 ```
+
+## 1.3: Secret message
+
+Commands to start, go to running docker and run the tail -f command:
+
+```bash
+docker run -it devopsdockeruh/simple-web-service:ubuntu
+docker exec -it naughty_hypatia bash
+tail -f ./text.log
+```
+
+Secret message is: 'You can find the source code here: https://github.com/docker-hy'
