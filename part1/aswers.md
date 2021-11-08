@@ -69,3 +69,22 @@ Atleast for example:
 ```
 
 ...installs Curl automatically when creating the container.
+
+## 1.5: Sizes of images
+
+```bash
+~$ docker images
+REPOSITORY                          TAG       IMAGE ID       CREATED        SIZE
+devopsdockeruh/simple-web-service   ubuntu    4e3362e907d5   7 months ago   83MB
+devopsdockeruh/simple-web-service   alpine    fd312adc88e0   7 months ago   15.7MB
+~$ docker exec -it nifty_stonebraker sh
+/usr/src/app # tail -f ./text.log
+2021-11-08 13:43:15 +0000 UTC
+2021-11-08 13:43:17 +0000 UTC
+2021-11-08 13:43:19 +0000 UTC
+2021-11-08 13:43:21 +0000 UTC
+2021-11-08 13:43:23 +0000 UTC
+Secret message is: 'You can find the source code here: https://github.com/docker-hy'
+2021-11-08 13:43:25 +0000 UTC
+...
+```
