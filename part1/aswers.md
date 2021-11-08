@@ -88,3 +88,18 @@ Secret message is: 'You can find the source code here: https://github.com/docker
 2021-11-08 13:43:25 +0000 UTC
 ...
 ```
+
+## 1.5: Sizes of images
+
+```bash
+~$ docker run -it devopsdockeruh/pull_exercise
+Unable to find image 'devopsdockeruh/pull_exercise:latest' locally
+latest: Pulling from devopsdockeruh/pull_exercise
+...
+Status: Downloaded newer image for devopsdockeruh/pull_exercise:latest
+Give me the password: basics
+You found the correct password. Secret message is:
+"This is the secret message"
+
+...
+```
