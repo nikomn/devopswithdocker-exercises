@@ -89,7 +89,7 @@ Secret message is: 'You can find the source code here: https://github.com/docker
 ...
 ```
 
-## 1.5: Sizes of images
+## 1.6: Hello Docker Hub
 
 ```bash
 ~$ docker run -it devopsdockeruh/pull_exercise
