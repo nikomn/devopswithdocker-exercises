@@ -103,3 +103,26 @@ You found the correct password. Secret message is:
 
 ...
 ```
+
+## 1.7: Two line Dockerfile
+
+```bash
+~$ docker build . -t web-server:web-server
+Sending build context to Docker daemon  6.656kB
+Step 1/2 : FROM devopsdockeruh/simple-web-service:alpine
+ ---> fd312adc88e0
+Step 2/2 : CMD server
+ ---> Using cache
+ ---> fe8fff563e78
+Successfully built fe8fff563e78
+Successfully tagged web-server:web-server
+$ docker run web-server
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:   export GIN_MODE=release
+ - using code:  gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /*path                    --> server.Start.func1 (3 handlers)
+[GIN-debug] Listening and serving HTTP on :8080
+```
