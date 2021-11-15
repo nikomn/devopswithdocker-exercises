@@ -126,3 +126,25 @@ $ docker run web-server
 [GIN-debug] GET    /*path                    --> server.Start.func1 (3 handlers)
 [GIN-debug] Listening and serving HTTP on :8080
 ```
+
+## 1.8: Image for script
+
+
+To build and run:
+
+```bash
+~$ docker build . -t curler:curler
+[...]
+~$ docker run -it curler:curler
+[...]
+Input website:
+helsinki.fi
+Searching..
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html><head>
+<title>301 Moved Permanently</title>
+</head><body>
+<h1>Moved Permanently</h1>
+<p>The document has moved <a href="https://www.helsinki.fi/">here</a>.</p>
+</body></html>
+```
