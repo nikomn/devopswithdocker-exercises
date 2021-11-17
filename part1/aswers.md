@@ -155,3 +155,11 @@ Searching..
 ```bash
 touch text.log ; docker run -v "$(pwd)/text.log:/usr/src/app/text.log" devopsdockeruh/simple-web-service
 ```
+
+## 1.10: Ports open
+
+```bash
+docker run -p 3000:8080 devopsdockeruh/simple-web-service server
+```
+
+After this the "You connected to the following path: ..." can be seen, when visiting http://localhost:3000/ with browser.
