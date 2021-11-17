@@ -106,6 +106,8 @@ You found the correct password. Secret message is:
 
 ## 1.7: Two line Dockerfile
 
+[Dockerfile](Dockerfile-1-7)
+
 ```bash
 ~$ docker build . -t web-server:web-server
 Sending build context to Docker daemon  6.656kB
@@ -128,6 +130,8 @@ $ docker run web-server
 ```
 
 ## 1.8: Image for script
+
+[Dockerfile](Dockerfile-1-8)
 
 
 To build and run:
@@ -163,3 +167,13 @@ docker run -p 3000:8080 devopsdockeruh/simple-web-service server
 ```
 
 After this the "You connected to the following path: ..." can be seen, when visiting http://localhost:3000/ with browser.
+
+## 1.11: Spring
+
+[Dockerfile](Dockerfile-1-11)
+
+Starts with
+
+```bash
+docker build . -t spring-project && docker run -p 3000:8080 spring-project
+```
