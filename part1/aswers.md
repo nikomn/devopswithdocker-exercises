@@ -177,3 +177,13 @@ Starts with
 ```bash
 docker build . -t spring-project && docker run -p 3000:8080 spring-project
 ```
+
+## 1.12: Hello, frontend!
+
+[Dockerfile](Dockerfile-1-12)
+
+Starts with
+
+```bash
+docker build . -t example-frontend && docker run -p 5000:5000 example-frontend
+```
