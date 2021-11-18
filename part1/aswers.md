@@ -197,3 +197,20 @@ Starts with
 ```bash
 docker build . -t example-backend && docker run -p 8080:8080 example-backend
 ```
+
+## 1.14: Environment
+
+[Dockerfile of frontend](Dockerfile-1-14-frontend)
+[Dockerfile of backend](Dockerfile-1-14-backend)
+
+Start backend with
+
+```bash
+docker build . -t example-backend && docker run -p 8080:8080 example-backend
+```
+
+Start frontend with
+
+```bash
+docker build . -t example-frontend && docker run -p 5000:5000 example-frontend
+```
