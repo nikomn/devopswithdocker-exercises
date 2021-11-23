@@ -17,3 +17,11 @@ The file is meant to be in the folder that both the folder containing the backen
 ## 2.4
 
 [Docker-compose file](2-4-docker-compose.yml)
+
+## 2.5
+
+Scaling works and the test passes, when started with for example command:
+
+```bash
+docker-compose up --scale compute=5
+```
