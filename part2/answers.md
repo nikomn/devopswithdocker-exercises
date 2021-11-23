@@ -13,3 +13,7 @@
 [Docker-compose file](2-3-docker-compose.yml)
 
 The file is meant to be in the folder that both the folder containing the backend and the folder containing backend are located.
+
+## 2.4
+
+[Docker-compose file](2-4-docker-compose.yml)
