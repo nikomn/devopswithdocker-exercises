@@ -25,3 +25,7 @@ Scaling works and the test passes, when started with for example command:
 ```bash
 docker-compose up --scale compute=5
 ```
+
+## 2.6
+
+[Docker-compose file](2-6-docker-compose.yml)
