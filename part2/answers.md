@@ -33,3 +33,9 @@ docker-compose up --scale compute=5
 ## 2.7
 
 [Docker-compose file](2-7-docker-compose.yml)
+
+## 2.8
+
+[Docker-compose file](2-8-docker-compose.yml)
+
+[nginx.conf file](nginx.conf)
