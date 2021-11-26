@@ -39,3 +39,9 @@ docker-compose up --scale compute=5
 [Docker-compose file](2-8-docker-compose.yml)
 
 [nginx.conf file](nginx.conf)
+
+## 2.9
+
+[Docker-compose file](2-9-docker-compose.yml)
+
+Note: The database files in ./database can only be viewed and deleted using sudo.
