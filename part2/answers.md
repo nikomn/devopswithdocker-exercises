@@ -82,3 +82,8 @@ is set as ENV REQUEST_ORIGIN=http://frontend:5000.
 4. I ran docker-compose up
 
 And after this all buttons worked.
+
+edit. I did some more testing still, and actually, it seems that I can just
+remove the ENV REQUEST_ORIGIN and REACT_APP_BACKEND_URL from the Dockerfiles.
+After doing so and using docker-compose up --build everything works. I guess
+it is because the proxy takes care of such things automatically.
