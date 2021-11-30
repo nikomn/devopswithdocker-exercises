@@ -8,4 +8,4 @@
 
 ## 3.2 Building images inside of a container
 
-[Container builder](container-builder/README.md)
+[Container builder](container-builder/)
