@@ -1,0 +1,21 @@
+FROM golang:1.16-alpine
+
+WORKDIR /usr/src/app
+SHELL ["/bin/sh", "-c"]
+
+COPY . .
+
+RUN apk add --no-cache bash && \
+    addgroup -S docker && \
+    adduser \
+    --disabled-password \
+    --gecos "" \
+    --home /usr/src/app \
+    --ingroup docker \
+    appuser && \
+    go build && \ 
+    chown appuser /usr/src/app
+
+USER appuser
+
+CMD ["./server"]
