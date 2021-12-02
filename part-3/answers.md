@@ -73,3 +73,49 @@ example-frontend  latest        65af1540c653   8 minutes ago       521MB
 
 Tried to reduce it even further, but with not much success. Would propably require
 more knowledge what is inside ubuntu:18.04 and what can be removed.
+
+## 3.5
+
+[Dockerfile of frontend](Dockerfile-3-5-frontend)
+[Dockerfile of backend](Dockerfile-3-5-backend)
+
+Everything seems to work ok after changes.
+
+### Backend
+
+I actually already switched to golang:1.16-alpine in ex. 3.4, after I got the
+idea from the "Building Small Containers". So the difference is already documented
+on that answer. I did few edits to the Dockerfile after reading the material
+after ex. 3.4., but nothing that changes the size of the image much.
+
+Original size was:
+
+```bash
+$ docker image ls
+REPOSITORY        TAG       IMAGE ID       CREATED          SIZE
+example-backend   latest    4cfb2ad9ae2c   19 seconds ago   1.07GB
+```
+
+New size:
+
+```bash
+REPOSITORY          TAG           IMAGE ID       CREATED          SIZE
+example-backend     alpine        d87fe9a5515c   10 seconds ago   447MB
+```
+
+### Frontend
+
+Old size was:
+
+```bash
+$ docker image ls
+REPOSITORY        TAG           IMAGE ID       CREATED             SIZE
+example-frontend  latest        65af1540c653   8 minutes ago       521MB
+```
+
+New size:
+
+```bash
+REPOSITORY          TAG           IMAGE ID       CREATED          SIZE
+example-frontend    alpine        66faf4d26cc6   23 seconds ago   408MB
+```
