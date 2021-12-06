@@ -4,4 +4,4 @@
 
 [Part 2 answers](part2/answers.md)
 
-[Part 3 answers](part3/answers.md)
+[Part 3 answers](part-3/answers.md)
