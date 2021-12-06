@@ -122,7 +122,7 @@ example-frontend    alpine        66faf4d26cc6   23 seconds ago   408MB
 
 ## 3.6: Multi-stage frontend
 
-[Dockerfile of frontend](Dockerfile-3-6-frontend)
+[Dockerfile](Dockerfile-3-6-frontend)
 
 Frontend size reduces down to 120MB
 
@@ -131,3 +131,31 @@ docker image ls
 REPOSITORY         TAG           IMAGE ID       CREATED          SIZE
 example-frontend   latest        4382fd1a7423   47 seconds ago   120MB
 ```
+
+Building and running with
+
+```bash
+docker build . -t example-frontend && docker run -p 5000:5000 example-frontend
+```
+
+...seems to work as expected, frontend can be opened at http://localhost:5000/.
+
+## 3.6 (...or 3.7?): Multi-stage backend
+
+[Dockerfile](Dockerfile-3-6-backend)
+
+Frontend size reduces down to 18MB
+
+```bash
+docker image ls
+REPOSITORY         TAG           IMAGE ID       CREATED          SIZE
+example-backend    latest        ce18b77faf3f   44 seconds ago   18MB
+```
+
+Building and running with
+
+```bash
+docker build . -t example-backend && docker run -p 8080:8080 example-backend
+```
+
+...seems to work as expected, http://localhost:8080/ping answers with "pong".

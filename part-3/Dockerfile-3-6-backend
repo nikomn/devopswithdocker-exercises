@@ -1,0 +1,19 @@
+FROM golang:1.16-alpine as build-stage
+
+WORKDIR /usr/src/app
+
+COPY . .
+
+RUN adduser -D appuser && \
+    CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build && \ 
+    chown appuser /usr/src/app
+
+
+FROM scratch
+
+COPY --from=build-stage /usr/src/app/server /usr/src/app/server
+
+WORKDIR /usr/src/app/
+
+
+ENTRYPOINT [ "/usr/src/app/server" ]
