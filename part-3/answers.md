@@ -119,3 +119,15 @@ New size:
 REPOSITORY          TAG           IMAGE ID       CREATED          SIZE
 example-frontend    alpine        66faf4d26cc6   23 seconds ago   408MB
 ```
+
+## 3.6: Multi-stage frontend
+
+[Dockerfile of frontend](Dockerfile-3-6-frontend)
+
+Frontend size reduces down to 120MB
+
+```bash
+docker image ls
+REPOSITORY         TAG           IMAGE ID       CREATED          SIZE
+example-frontend   latest        4382fd1a7423   47 seconds ago   120MB
+```
