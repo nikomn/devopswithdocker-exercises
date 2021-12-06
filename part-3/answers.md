@@ -159,3 +159,51 @@ docker build . -t example-backend && docker run -p 8080:8080 example-backend
 ```
 
 ...seems to work as expected, http://localhost:8080/ping answers with "pong".
+
+## 3.7 (...or 3.8?):
+
+[Original Dockerfile](Dockerfile-3-7-original)
+
+[Updated Dockerfile](Dockerfile-3-7-new)
+
+I chose Dockerfile of our old project, that can be found from here: https://github.com/nikomn/Kierratysavustin
+
+The original image is quite large
+
+```bash
+docker image ls
+REPOSITORY                TAG           IMAGE ID       CREATED                  SIZE
+kierratysavustin-local   latest        14088b734577   Less than a second ago   1.22GB
+```
+
+To reduce the size I used a multi build strategy. I did not worry so much about
+the build image size as I understood what matters is the image that is run, so
+I kept most of the file as it is for the build part. It could also be trimmed
+down by combining the RUN commands etc.
+
+But what I did change was to use the alpine version of node for the final image.
+I just copied the files from the build image to the final, and this could be
+trimmed a bit more as now the backend tests etc. were copied to the final image
+also. How ever as they are only txt files and not much size savings would happen.
+I also changed the user to appuser for security.
+
+The end image has quite a difference in size:
+
+```bash
+docker image ls
+REPOSITORY                TAG           IMAGE ID       CREATED           SIZE
+kierratysavustin-local   latest      321a7c723b01   54 seconds ago       182MB
+```
+
+So as the size changed that much, I think I am pretty happy with the end result :)
+
+To run the program:
+
+1. Clone the Kierratysavustin project
+2. Make changes to Dockerfile or create a new one with name Dockerfile.edit for example
+3. Add .env file to server folder (for example echo "somethingsecret" > server/.env)
+4. Run docker build --build-arg PUBLIC_URL=/kierratysavustin -t kierratysavustin-local .
+or docker build --build-arg PUBLIC_URL=/kierratysavustin -t kierratysavustin-local . -f Dockerfile.edit, if you chose to create an alternative dockerfile
+5. Run docker-compose up -d (there is a docker-compose.yml file that handles the database etc.)
+6. App should be running at http://localhost:3001/kierratysavustin
+7. docker-compose down to close as usual
